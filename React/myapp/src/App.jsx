@@ -4,6 +4,7 @@ import pic2 from "./assets/sample.jpeg.jpeg";
 import "./App.css";
 import Counter from "./components/counter.jsx";
 import Toggle from "./components/toggle.jsx";
+
 function App() {
   return (
     // <div className="user-container2">

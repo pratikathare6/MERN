@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./counter.css";
+
 const Counter = () => {
     const [count, setcount] = useState(0);
 
@@ -14,6 +15,9 @@ const Counter = () => {
             >
                 Click me
             </button>
+
+            <ul><li className="bg-orange-400">Hi</li>
+            <li>test</li></ul>
         </div>
     );
 };
