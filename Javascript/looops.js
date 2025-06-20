@@ -55,11 +55,36 @@
          
 
 
-    const fs = require("fs");
+    // const fs = require("fs");
 
-    fs.readFile("a.txt","utf-8",function(err,data){
+    // fs.readFile("a.txt","utf-8",function(err,data){
+
+    //     console.log(data);
+
+
+    // })
+
+
+
+    const fs = require("fs")
+
+    function pratreadfile(cb){
+
+        fs.readFile("a.txt" , "utf-8", function(err,data){
+
+
+            cb(data);
+        })
+
+
+        
+    }
+
+    function ondone(data){
 
         console.log(data);
+    }
+
+    pratreadfile(ondone);
 
 
-    })
