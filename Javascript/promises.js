@@ -42,47 +42,71 @@
         //  p.then(callback);
 
 
-    function promisefun(){
 
-        let p = new Promise(function(resolve){
+        function squr(a){
 
-            setTimeout(function(){
+          return a*a;
+        }
 
-                resolve("hii there");
-                
-            },3000)
+        function cubes(b){
+
+          return b*b*b;
+        }
+        function callbck(a,b,fn)
+        {
             
+             let sqr1 = fn(a);
+            let sqr2 = fn(b);
+             
+
+            return sqr1+sqr2;
+
+        }
+
+        let ans = callbck(10,20,squr);
+
+        console.log(ans);
+
+
+
+        const fs = require("fs");
+
+      
+
+        
+
+        fs.writeFile("a.txt","this is the sample text from fs write",(err)=>{
+
+            if(err){
+              console.log(err)
+            }
+            else
+            {
+              console.log("write sucessfull");
+
+            }
+        });
+
+        fs.readFile("a.txt","utf-8",(err,data)=>{
+
+          console.log(data);
         })
 
-        return p;
-    }
 
-    async function main(){
+        function newprom(){
 
-        let val = await promisefun();
-         console.log(val);
-        console.log('hello there');
-       
-    }
+          let p = new Promise(function(resolve){
 
-    main();
+            resolve("hiiiiii");
+          })
+          return p;
+        }
 
-    console.log('after main');
+        async function main(){
 
+          let ans = await newprom();
+          
+          console.log(ans);
+        }
 
-    async function fetchData() {
-  try {
-    const response = await fetch('https://fake-json-api.mock.beeceptor.com/users');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const data = await response.json();
-    console.log(JSON.stringify(data));
-    return data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-// Call the function
-fetchData();
+        main();

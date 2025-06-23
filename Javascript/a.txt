@@ -1,1 +1,1 @@
-hii thetre from txt
+this is the sample text from fs write
