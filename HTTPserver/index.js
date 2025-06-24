@@ -1,14 +1,22 @@
 const express = require("express");
 
-const port = 3000;
+
+const port = 4000;
+
 
 const app = express();
 
+app.use(express.json());
 
-app.get('/',function(req,res){
+app.post('/',function(req,res){
 
-    res.send("hello world from the js");
-})
+    console.log(req.headers)
+    console.log(req.body)
+    res.send("hello world in js ");
+
+});
+
+ 
 
 
-app.listen(port);
+    app.listen(port);
