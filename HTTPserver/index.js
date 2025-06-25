@@ -1,22 +1,28 @@
-const express = require("express");
-
-
-const port = 4000;
-
+const express =  require ('express');
 
 const app = express();
 
-app.use(express.json());
-
-app.post('/',function(req,res){
-
-    console.log(req.headers)
-    console.log(req.body)
-    res.send("hello world in js ");
-
-});
-
- 
+const port =3000;
 
 
-    app.listen(port);
+
+ calculatesum = (n)=>{
+
+    let ans = 0;
+
+    for(let i=0;i<n;i++){
+
+        ans = ans+i;
+    }
+    return ans;
+
+ }
+app.get("/",function(req,res){
+    
+    const n = req.query.n;
+    const ans = calculatesum(n);
+
+    res.send('hii there your ans is '+ans);
+})
+
+app.listen(3000);
