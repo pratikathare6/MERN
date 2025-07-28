@@ -7,22 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-     <script>
+     <script>   
 
-            function getsun(){
-            let  n1 = document.getElementById("A").value;
-            let n2 = document.getElementById("B").value;
+            let timeout;
 
-            const element = document.getElementById("ans")
+            function debounce(){
 
-            element.innerHTML= parseInt(n1)+parseInt(n2); }
+                clearTimeout = (timeout);
+                timeout =  setTimeout(function(){
+
+                    getsum();
+
+                },4000)
+            }
+
+            async function getsum(){
+
+                const a = document.getElementById("A").value;
+                const b = document.getElementById("B").value;
+
+                const response = await fetch("http://localhost:3000/sum?A="+a+ "&B=" +b)
+
+                const ans = await response.text();
+
+                document.getElementById("ans").innerHTML = ans;
+
+
+            }
 
     </script>
 
-    <input type="text" name="A" id="A" placeholder="Num 1"><br><br>
-    <input type="text" name="B" id="B" placeholder="Num 2"><br><br>
+    <input oninput="debounce()" type="text" name="A" id="A" placeholder="Num 1"><br><br>
+    <input oninput="debounce()" type="text" name="B" id="B" placeholder="Num 2"><br><br>
     
-    <button onclick=getsun()>calculate</button>
+    <button onclick=getsum()>calculate</button>
 
     <div id="ans"></div>
 </body>
