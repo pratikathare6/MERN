@@ -1,27 +1,52 @@
-import { useState } from 'react'
- 
+import {useState} from "react";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todo,setTodos] = useState([{
+
+      title: 'go to gym',
+      name: 'toto'
+
+  }]); 
+   
+  function addtodo(){
+
+      setTodos([...todo,{
+
+          title: 'new todo',
+          name: 'desc of new todo'
+      }])
+
+  }
 
   return (
     <div>
-        <button onClick={ 
-          
-          ()=>{
-            setCount((count) => Math.random())
 
-          } 
-          
-          }>
+      <button onClick={addtodo}>add a random todo</button>
 
+      {todo.map(function(todo){
 
-          count is {count}
-        </button>
-         
+            return (
+
+              <Todo title={todo.title} name ={todo.name}></Todo>
+            )
+      })} 
+
     </div>
   )
+
 }
 
+  function  Todo(props){
+
+      return(
+      <div>
+
+        {props.title},
+        {props.name}
+
+      </div>)
+  }
+
+  
 export default App
