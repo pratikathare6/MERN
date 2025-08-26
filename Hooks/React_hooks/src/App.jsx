@@ -18,12 +18,12 @@ function App() {
         title: "todo 2"
       }])
 
-      function Todo(id,title){
+      function Todo(title){
 
         return(
         <div>
 
-              <h1>{id}</h1>
+              
               <h2>{title}</h2>
 
 
@@ -41,13 +41,14 @@ function App() {
 
       <>
          <button style={{background: "tomato"}}  onClick={setthename}>Click to change the header</button>
+          <button style={{background: "tomato"}}  onClick={setTodos}>Click to change the header</button>
 
         <Header title={title}></Header>
         <Header title="my react app1"></Header>
 
 
         {todos.map(function(todo){
-          return <Todo title={todo.title} id={todo.id} />
+          return <Todo key={todo.id} title={todo.title}  />
           
         })}
 
