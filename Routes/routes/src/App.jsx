@@ -5,6 +5,7 @@ const  Landing = lazy(()=> import("./components/landing"));
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
+import { Suspense } from "react";
 
 
 
@@ -14,9 +15,11 @@ function App() {
       <BrowserRouter>
         <Appbar />
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* suspense used to display a loading msg when the component has yet to load on screen */}
+          <Route path="/dashboard" element=  {<Suspense fallback={'Loading....'}> <Dashboard /> </Suspense>} />
 
-          <Route path="/" element={<Landing />} />
+          <Route path="/" element={ <Suspense fallback = {'Loading...'}> <Landing /> </Suspense>}/>
+
         </Routes>
       </BrowserRouter>
     </div>
