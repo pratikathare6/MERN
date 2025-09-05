@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="fdiv" style="background-color: aqua; padding: 2rem">
+      first div
+      <p id="fpara" class="sample" style="background-color: green; padding: 1rem">
+        First Para
+      </p>
+
+      <div id="sdiv" style="background-color: yellow; padding: 1.2rem">
+        Second div
+        <p id="spara" style="background-color: orange; padding: 0.8rem">
+          second para
+        </p>
+      </div>
+    </div>
+
+    <!-- let para1 = document.getElementById('spara');
+undefined
+para1
+<p id=​"spara" style=​"background-color:​ orange;​ padding:​ 0.8rem;​">​ second para ​</p>​
+para1.style.backgroundColor = 'red'; -->
+
+
+<!-- let para1 = document.getElementById('spara');
+undefined
+para1.style.cssText
+'background-color: orange; padding: 0.8rem;'
+para1.style.cssText='background-color:black; color: white';
+'background-color:black; color: white' -->
+
+
+<!-- let fele  = document.querySelector('#fdiv');
+undefined
+fele
+<div id=​"fdiv" style=​"background-color:​ aqua;​ padding:​ 2rem">​…​</div>​
+fele.setAttribute('class','divclass');
+undefined
+fele
+<div id=​"fdiv" style=​"background-color:​ aqua;​ padding:​ 2rem" class=​"divclass">​…​</div>​
+fele.setAttribute('style',"padding:0.1rem"); -->
+
+
+<!-- let fpara = document.querySelector('#fpara')
+undefined
+fpara
+<p id=​"fpara" class=​"sample" style=​"background-color:​ green;​ padding:​ 1rem">​ First Para ​</p>​
+fpara.classList
+DOMTokenList ['sample', value: 'sample']
+fpara.classList.add('newclass');
+undefined
+fpara
+<p id=​"fpara" class=​"sample newclass" style=​"background-color:​ green;​ padding:​ 1rem">​ First Para ​</p>​
+fpara.classList.add('newclass');
+undefined
+fpara.classList
+DOMTokenList(2) ['sample', 'newclass', value: 'sample newclass']
+fpara.classList.remove('newclass');
+undefined
+fpara.classList.remove('newclass');
+undefined
+fpara.classList
+DOMTokenList ['sample', value: 'sample']
+fpara.classList.add('newclass');
+undefined
+fpara.classList.toggle(newclass);
+VM1801:1 Uncaught ReferenceError: newclass is not defined
+    at <anonymous>:1:24
+(anonymous) @ VM1801:1Understand this errorAI
+fpara.classList.toggle('newclass');
+false
+fpara.classList
+DOMTokenList ['sample', value: 'sample']
+fpara.classList.toggle('sample');
+false
+fpara.classList
+DOMTokenList [value: ''] -->
+
+</body>
+</html>
