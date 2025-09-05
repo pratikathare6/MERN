@@ -1,0 +1,23 @@
+.box{
+
+    height: 100px;
+    width: 50px;
+    border: 1px solid red;
+    background-color: brown;
+/* 
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: linear; */
+
+    /* transition inline */
+    /* transition: all 5s linear; */
+
+    transition: width 2s,height 2s linear;
+}
+
+.box:hover{
+
+    width: 600px;
+    height: 600px;
+    background-color: black;
+}

@@ -1,0 +1,30 @@
+/* #img1{
+
+    float: right;
+}
+
+#img2{
+
+    padding-top: 5px;
+    float: right;
+    clear: right;
+} */
+
+
+.box{
+
+    border: 1px solid black;
+    height: 150px;
+    overflow: auto;
+
+}
+
+.item{
+
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    border: 1px solid black;
+
+    float: left;;
+}

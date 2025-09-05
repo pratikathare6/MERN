@@ -1,0 +1,49 @@
+/* .box{
+
+    border: 2px solid red;
+
+    width: 25%;
+}
+
+.parent{
+
+    border: 1px solid black;
+    background-color: rgb(237, 237, 107);
+    width: 50%;
+}
+
+.child{
+
+        border: 1px solid red;
+        background-color: aqua;
+        width: 25%;
+} */
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+
+    text-align: center;
+    background-color: beige;
+    border: 5px solid black;
+    right: 50vw;
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+
+}
+
+.container2{
+
+    text-align: center;
+    /* margin-left: 50vw; */
+    position: relative;
+    left: 50vw;
+    background-color: beige;
+    border: 5px solid black;
+    width: 50vw;
+    height: 50vh;
+
+}

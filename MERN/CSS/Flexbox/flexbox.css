@@ -1,0 +1,64 @@
+.container {
+
+    background-color: beige;
+    border: 5px solid black;
+    margin: 2px;
+    padding: 2px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap-reverse; */
+    /* flex-flow: row; */
+
+    /* justify-content: start; */
+    /* justify-content: left; */
+    /* justify-content: right; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+
+    /* align-items: start;
+    align-content: start; */
+
+
+
+}
+
+.box {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#b1 {
+
+    background-color: beige;
+    /* flex-grow: 5; */
+    /* flex: 5 8 100px; short hand notation */
+    align-self: center;
+}
+
+#b2 {
+    background-color: aqua;
+    /* order: -1; */
+    /* flex-shrink: 4; */
+    /* flex-grow: 1; */
+}
+
+#b3 {
+
+    background-color: black;
+    /* flex-grow: 1; */
+}
+
+#b4 {
+
+    background-color: brown;
+    /* flex-grow: 1; */
+}

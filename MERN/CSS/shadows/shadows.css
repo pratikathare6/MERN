@@ -1,0 +1,49 @@
+:root{
+
+    --custome-color: black;
+    /* --custome-width:5px;       custome variables defined globally */
+}
+
+.container{
+
+    height: 650px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+
+.child{
+
+    /* --custome-color: black; use of custome variables */
+    --custome-width:5px;
+    border: var(--custome-width) solid var(--custome-color);
+    width: 400px;
+    height: 400px;
+    margin: 1px;
+    padding: 1px;
+    background-color: aquamarine;
+    box-shadow: 15px -10px brown;
+    /* box-shadow: 10px 8px 70px red; */
+    /* box-shadow: 10px 8px 50px 30px red; */
+    /* box-shadow: inset 10px 10px red; */
+    /* box-shadow: 10px 10px red, 50px 50px green; */
+}
+
+img{
+
+        height: 200px;
+        width: 200px;
+        display: block;
+        margin: auto;
+        padding: auto;
+}
+
+p{
+    text-align: center;
+
+    /* text-shadow: 1px 1px rgb(232, 43, 43); */
+    text-shadow: 2px 2px 3px red;
+    /* text-shadow: 2px 2px 3px red,2px 2px 3px green, 2px 22px 3px blue; */
+}

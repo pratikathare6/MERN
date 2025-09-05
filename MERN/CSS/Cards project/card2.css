@@ -1,0 +1,130 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+.container{
+
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
+}
+
+.card{
+
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+}
+
+.card img{
+
+    width: 400px;
+    height: 200px;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.textbox{
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.amountbox{
+
+    width: 80%;
+    height: 10%;
+    background-color: skyblue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+
+}
+
+@media (max-width:400px) {
+
+    .amountbox{
+
+        flex-direction: column;
+    }
+    .leftbox{
+
+        flex-direction: column;
+
+        margin-bottom: 50px;
+    }
+    
+}
+
+#paymentbtn{
+
+        width: 80%;
+        height: 10%;
+        background-color: rgba(2, 2, 103, 0.863);
+        color: white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 10px;
+        border: none;
+
+}
+
+.canclebox a{
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.leftbox #imgbox img{
+
+    width: 70px;
+    height: 64px;
+    border-radius: 10px;
+    
+}
+.leftbox #textamountbox p{
+
+        padding: 5px;
+
+}
+
+.leftbox{
+
+    width: fit-content;
+    display: flex;
+    gap: 20px;
+}
+
+.rightbox a{
+
+    padding-right: 7px;
+
+    text-decoration: none;
+    color: blue;
+}
