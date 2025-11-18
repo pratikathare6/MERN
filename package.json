@@ -1,29 +1,7 @@
 {
   "dependencies": {
-    "next": "15.5.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3"
-  },
-  "name": "mern",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pratikathare6/MERN.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/pratikathare6/MERN/issues"
-  },
-  "homepage": "https://github.com/pratikathare6/MERN#readme"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "recoil": "^0.7.7"
+  }
 }
