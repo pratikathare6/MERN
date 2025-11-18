@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+</head>
+<body>
+     <script>   
+
+            let timeout;
+
+            function debounce(){
+
+                clearTimeout = (timeout);
+                timeout =  setTimeout(function(){
+
+                    getsum();
+
+                },4000)
+            }
+
+            async function getsum(){
+
+                const a = document.getElementById("A").value;
+                const b = document.getElementById("B").value;
+
+                const response = await fetch("http://localhost:3000/sum?A="+a+ "&B=" +b)
+
+                const ans = await response.text();
+
+                document.getElementById("ans").innerHTML = ans;
+
+
+            }
+
+    </script>
+
+    <input oninput="debounce()" type="text" name="A" id="A" placeholder="Num 1"><br><br>
+    <input oninput="debounce()" type="text" name="B" id="B" placeholder="Num 2"><br><br>
+    
+    <button onclick=getsum()>calculate</button>
+
+    <div id="ans"></div>
+</body>
+</html>

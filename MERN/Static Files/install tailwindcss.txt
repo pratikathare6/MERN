@@ -1,0 +1,9 @@
+npm install -D tailwindcss@3.4.1 postcss@8.4.35 autoprefixer@10.4.17
+npx tailwindcss init -p
+
+
+after this install tailwind css extention in vs code 
+
+https://github.com/100xdevs-cohort-2/assignments.git
+
+mongodb+srv://pratik123:UsPuhxzbNIhe17zz@cluster0.1aizdpc.mongodb.net/

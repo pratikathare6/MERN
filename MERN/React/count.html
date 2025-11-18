@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+            <button id="cnt" onclick="onpress()">Count 0</button>
+
+            <script>
+
+                function onpress(){
+                        const initialval = document.getElementById('cnt').innerHTML;
+
+                        const vall = initialval.split(" ")[1];
+
+                       const newval =  parseInt(vall)+1;
+
+                       document.getElementById("cnt").innerHTML = 'count ' + newval;
+                }
+
+            </script>
+</body>
+</html>

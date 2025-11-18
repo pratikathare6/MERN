@@ -1,0 +1,27 @@
+/* h1
+{
+    font-size: large;
+    text-align: center;
+    display: flex;
+
+} */
+
+p{
+    color: brown;
+}
+
+article{
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: italic;
+}
+
+.para{
+
+    color: blue;
+}
+
+p.para{
+
+    width: auto;
+}

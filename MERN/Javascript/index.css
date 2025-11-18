@@ -1,0 +1,13 @@
+:root{
+
+    --color: red;
+}
+
+
+
+p{
+    font-size: 10rem;
+
+    color: var(--color);
+}
+
