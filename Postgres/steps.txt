@@ -1,0 +1,13 @@
+npm install pg 
+
+npx tsc --init
+
+npm install @types/pg
+create src folder
+change rootdir and outdir
+
+tsc -b
+
+node dist/filename.js
+
+for typescript chnage package json type to module
