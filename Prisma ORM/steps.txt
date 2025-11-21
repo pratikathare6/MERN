@@ -1,0 +1,19 @@
+create empty folder 
+npm init -y
+
+npm install prisma typescript ts-node @types/node --save-dev
+npx tsc --init 
+
+chnage package json type to module 
+npx prisma init 
+
+if the schema is already there use 
+npx prisma db pull 
+
+
+if not use 
+npx prisma migrate dev --name init 
+
+to generate client use 
+npx prisma generate
+
