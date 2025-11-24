@@ -1,19 +1,55 @@
-create empty folder 
 npm init -y
+npm install typescript tsx @types/node --save-dev
+npx tsc --init
 
-npm install prisma typescript ts-node @types/node --save-dev
-npx tsc --init 
+npm install prisma @types/node @types/pg --save-dev 
+npm install @prisma/client @prisma/adapter-pg pg dotenv
 
-chnage package json type to module 
-npx prisma init 
+chnage type to module in json file 
 
-if the schema is already there use 
-npx prisma db pull 
+npx prisma init --db --output ../generated/prisma
 
+create src folder and chnage this to include src folder 
+ output   = "../src/generated/prisma"
 
-if not use 
-npx prisma migrate dev --name init 
-
-to generate client use 
 npx prisma generate
 
+npx prisma migrate dev --name init // for migration
+
+or use 
+
+npx prisma db pull for import existing database
+
+tsc -b
+
+node dist/index.js
+
+
+
+
+import { PrismaClient} from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+
+async function main(){
+
+
+        const res = await prisma.user2.create({
+
+            data:{
+
+                email: 'abc.mail.com',
+                firstname: 'abc',
+                lastname: 'bcd',
+                password: 'smallcase123'
+
+
+            }
+        })
+
+        console.log(res);
+
+}
+
+main();

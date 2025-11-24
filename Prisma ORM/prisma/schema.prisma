@@ -14,21 +14,10 @@ datasource db {
 }
 
 
-model user2{
-
-    id Int @id @default(autoincrement())
-    email String @unique
-    firstname String?
-    lastname String?
-
-}
-
-model todo{
-
-    id Int @id @default(autoincrement())
-    title String 
-    done Boolean @default(false)
-    description String?
-
-
+model User3 {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  firstname String
+  lastname  String
+  password  String
 }
