@@ -1,0 +1,14 @@
+npm create Cloudflare -- my-app
+
+npm run dev 
+
+npx wrangler login --to login your cloudflare account 
+
+npm run deploy
+
+--hono library similar like express 
+
+
+npm create hono@latest hono-app
+
+npm run dev

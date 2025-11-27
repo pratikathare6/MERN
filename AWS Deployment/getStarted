@@ -1,0 +1,41 @@
+create AWS Account 
+Amazon EC2, or Amazon Elastic Compute Cloud, is a core service within Amazon Web Services (AWS) that provides resizable computing capacity in the cloud. Essentially, it allows users to rent virtual servers, known as "instances," to run their applications and workloads.
+
+In this we are using AWS EC2
+
+create instance 
+in this get the Key pair login .pem file
+
+in network setting
+tick the HTTP and HTTPS and SSH
+
+got to terminal connect to the SSH with the certificate
+ssh -i pratik-todo-test.pem ubuntu@3.235.187.224  <--AWS system ip and name
+
+if the file is too open ie dont have any restrictions 
+chmod 700 pratik-todo-test.pem
+and reconnect 
+
+
+get the repo link to clone HTTP based 
+and clone the repo in the terminal 
+git clone https://github.com/pratikathare6/MERN-Projects.git
+
+ping the google.com
+
+if it is not pinging 
+the open the vi
+vi /etc/resolv.conf
+edit the file and add nameserver 8.8.8.8 save and exit 
+
+this verifies that on the AWS system you are connected to the internet 
+
+install the nodejs on the SSH terminal 
+
+and run the app
+
+if your code like index.js running on the port 8080 or else 
+then edit the inbound rules in the security 
+just add the ipv4 and ipv6 inbound roles to port 8080 
+then we are good to go 
+doployed the application:)

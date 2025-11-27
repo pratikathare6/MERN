@@ -1,0 +1,14 @@
+-A serverless backend is a cloud computing model where a cloud provider 
+handels everything provisioning,management and scaling allowing developers
+to focus on wiriting the code only insted of managing their own infra
+
+-Cloudflare Workers is Cloudflare’s serverless runtime — basically a super-fast
+environment where you can run JavaScript, TypeScript, or WebAssembly without needing any server.
+Think of it like “JavaScript that runs on the edge globally”.
+
+
+-the cloudflare dosent allow to deploy the node js app or express app 
+so we need to use the hono library 
+
+
+--cloudflare workers are like node js runtime 

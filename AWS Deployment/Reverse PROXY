@@ -1,0 +1,86 @@
+so when the application or backend server is deployed 
+to acess this you need to serch the ip and port lets say 
+
+1.2.3.4:8080/home 
+
+this looks weired and suppose if there are many backends running on the 8080
+although we cant do that 
+so in this case we use reverse PROXY 
+basicall it will get the request and then indetifies the request whether it should be go 
+ex 8080 or 8081 or 8082 
+
+basically it routes the requests
+
+so for that we use nginx
+in the AWS machine install --> sudo apt install nginx
+
+go to aws instance and cpoy the url and run it 
+here the nginx is running on port 80 
+
+hereafter the nginx will firt receive the request and then forward to the other ports 
+
+for that we need to configure the DNS where we bought the domain 
+add new entry and paste the IP 
+
+now all the traffic is on nginx port 80
+
+so we need to create the reverse proxy 
+
+sudo rm sudo vi /etc/nginx/nginx.conf //remove existing configurations 
+
+sudo vi /etc/nginx/nginx.conf // add the below code 
+
+events {
+# Event directives...
+http {
+server {        //if want to add more servers copy form here 
+listen 80;
+server_name bel.100xdevs.com;
+location
+proxy_pass http://localhost:8080;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection
+'upgrade';
+proxy_set_header Host Shost;
+proxy_cache_bypass $http_upgrade;
+}
+}
+}
+
+sudo nginx -s reload //restart the nginx
+
+and start your app that is deployed on the AWS machine 
+
+
+Note: if you want to run the app forever after you quit the AWS machine (Ubanto terminal)
+pm2 is a process manager 
+install - 
+
+npm i -g pm2
+
+then use 
+
+pm2 start index.js
+
+you can stop it by 
+
+pm2 stop index.js 
+
+
+
+
+AWS EC2 Deployment Checklist:
+
+1. Create AWS account
+2. Launch t3.micro EC2
+3. Download PEM key
+4. SSH into EC2
+5. Configure Security Group (22, 80, 443)
+6. Install Node, Nginx
+7. Clone project from GitHub
+8. Run backend (PM2)
+9. Configure Nginx reverse proxy
+10. Map domain → EC2 IP
+11. Restart Nginx
+12. App live 
