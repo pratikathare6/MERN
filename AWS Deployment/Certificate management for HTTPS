@@ -1,0 +1,59 @@
+## Moving Your App to HTTPS Using Certbot on AWS
+
+### **Objective**
+
+* Upgrade your app from HTTP (port 80) to HTTPS (port 443) using Certbot.
+* Ensure secure, encrypted traffic.
+
+### **Steps**
+
+1. **Ensure Nginx is running**
+
+```bash
+sudo systemctl status nginx
+```
+
+* Nginx must be active and running before requesting a certificate.
+
+2. **Install Certbot**
+
+```bash
+sudo snap install --classic certbot
+```
+
+3. **Prepare Certbot command**
+
+```bash
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+```
+
+* This ensures the `certbot` command can be executed globally.
+
+4. **Run Certbot with Nginx plugin**
+
+```bash
+sudo certbot --nginx
+```
+
+* Certbot will automatically:
+
+  * Obtain an SSL certificate for your domain.
+  * Edit Nginx configuration to use HTTPS (port 443).
+  * Enable HTTPS redirection.
+
+5. **Verify HTTPS Access**
+
+* Open your domain in a browser using `https://`.
+* Optionally, check status using curl:
+
+```bash
+curl -I https://yourdomain.com
+```
+
+* You should see `HTTP/2 200` and `Strict-Transport-Security` headers.
+
+### **Notes**
+
+* Certbot automatically handles certificate renewal.
+* Ensure your domain DNS points to your EC2 instance IP before running Certbot.
+* For manual renewals: `sudo certbot renew --dry-run`

@@ -1,76 +1,102 @@
-so when the application or backend server is deployed 
-to acess this you need to serch the ip and port lets say 
+## AWS EC2 Deployment with Nginx Reverse Proxy
 
-1.2.3.4:8080/home 
+### **Why Reverse Proxy?**
 
-this looks weired and suppose if there are many backends running on the 8080
-although we cant do that 
-so in this case we use reverse PROXY 
-basicall it will get the request and then indetifies the request whether it should be go 
-ex 8080 or 8081 or 8082 
+* Directly using IP and port in a URL looks unprofessional: `1.2.3.4:8080/home`.
+* Exposing ports can be messy if multiple backends run on different ports.
+* Reverse proxy forwards incoming requests to the correct backend port (e.g., 8080, 8081).
+* Nginx is used as a reverse proxy.
 
-basically it routes the requests
+### **Steps to Set Up Nginx Reverse Proxy**
 
-so for that we use nginx
-in the AWS machine install --> sudo apt install nginx
+1. **Install Nginx on AWS EC2**
 
-go to aws instance and cpoy the url and run it 
-here the nginx is running on port 80 
+```bash
+sudo apt update
+sudo apt install nginx -y
+```
 
-hereafter the nginx will firt receive the request and then forward to the other ports 
+* Nginx will listen on **port 80**.
 
-for that we need to configure the DNS where we bought the domain 
-add new entry and paste the IP 
+2. **Configure DNS**
 
-now all the traffic is on nginx port 80
+* Add an A record in your domain DNS pointing to your EC2 public IP.
+* This ensures all traffic goes through Nginx on port 80.
 
-so we need to create the reverse proxy 
+3. **Configure Reverse Proxy**
 
-sudo rm sudo vi /etc/nginx/nginx.conf //remove existing configurations 
+* Remove existing Nginx config (optional):
 
-sudo vi /etc/nginx/nginx.conf // add the below code 
+```bash
+sudo rm /etc/nginx/nginx.conf
+```
 
+* Open config for editing:
+
+```bash
+sudo vi /etc/nginx/nginx.conf
+```
+
+* Add the following:
+
+```nginx
 events {
-# Event directives...
+    worker_connections 1024;
+}
+
 http {
-server {        //if want to add more servers copy form here 
-listen 80;
-server_name bel.100xdevs.com;
-location
-proxy_pass http://localhost:8080;
-proxy_http_version 1.1;
-proxy_set_header Upgrade $http_upgrade;
-proxy_set_header Connection
-'upgrade';
-proxy_set_header Host Shost;
-proxy_cache_bypass $http_upgrade;
+    server {
+        listen 80;
+        server_name anonymous751061.duckdns.org;
+
+        location / {
+            proxy_pass http://localhost:8080;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+    }
 }
-}
-}
+```
 
-sudo nginx -s reload //restart the nginx
+4. **Reload Nginx**
 
-and start your app that is deployed on the AWS machine 
+```bash
+sudo nginx -s reload
+```
 
+* Stop or check Nginx if needed:
 
-Note: if you want to run the app forever after you quit the AWS machine (Ubanto terminal)
-pm2 is a process manager 
-install - 
+```bash
+sudo systemctl stop nginx
+sudo systemctl status nginx
+```
 
+5. **Run Backend Forever Using PM2**
+
+* Install PM2:
+
+```bash
 npm i -g pm2
+```
 
-then use 
+* Start your app:
 
+```bash
 pm2 start index.js
+```
 
-you can stop it by 
+* Stop the app:
 
-pm2 stop index.js 
+```bash
+pm2 stop index.js
+```
 
+* PM2 keeps your app running even after logging out of SSH.
 
-
-
-AWS EC2 Deployment Checklist:
+### **AWS EC2 Deployment Checklist (with Reverse Proxy)**
 
 1. Create AWS account
 2. Launch t3.micro EC2
@@ -79,8 +105,8 @@ AWS EC2 Deployment Checklist:
 5. Configure Security Group (22, 80, 443)
 6. Install Node, Nginx
 7. Clone project from GitHub
-8. Run backend (PM2)
+8. Run backend with PM2
 9. Configure Nginx reverse proxy
 10. Map domain → EC2 IP
 11. Restart Nginx
-12. App live 
+12. App live
