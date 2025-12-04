@@ -1,0 +1,141 @@
+## S3 + CloudFront Frontend Deployment Notes
+
+### **What happens after building a modern frontend?**
+
+Modern frontends like **React, Vue, Angular** after running `npm run build` are:
+
+* ❌ NOT servers
+* ✅ Just static files:
+
+  * HTML
+  * CSS
+  * JavaScript
+  * Images
+
+They do not need Node.js or a running process to serve them.
+
+---
+
+### **High-level Architecture**
+
+```
+Browser
+   │
+   │  HTML / CSS / JS
+   ▼
+S3 + CloudFront  (Static frontend files)
+   │
+   │  /api/* requests
+   ▼
+EC2 Backend (Node / API)
+```
+
+---
+
+### **Steps to Deploy Frontend Using S3 + CloudFront**
+
+#### **1. Create an S3 Bucket**
+
+* Go to AWS S3.
+* Create a bucket (name should be globally unique).
+* Disable **Block public access** (CloudFront will control access instead).
+
+---
+
+#### **2. Build the Frontend**
+
+In your frontend project:
+
+```bash
+npm run build
+```
+
+* This generates static files (usually inside `dist/` or `build/`).
+
+---
+
+#### **3. Upload Build Files to S3**
+
+* Copy all build output files.
+* Upload them to the **root of the S3 bucket**.
+
+---
+
+#### **4. Create a CloudFront Distribution**
+
+* Go to **CloudFront** → Create distribution.
+* Origin:
+
+  * Select the S3 bucket.
+* Create **Origin Access Control (OAC)**.
+* Enable recommended security protections.
+* Set **Default root object**:
+
+  ```
+  index.html
+  ```
+* Click **Create distribution**.
+
+---
+
+#### **5. Attach CloudFront Policy to S3 Bucket**
+
+* After distribution creation, CloudFront provides a **bucket policy**.
+* Copy that policy.
+* Go to:
+
+  * S3 → Permissions → Bucket policy
+* Paste the policy and save.
+
+✅ This allows CloudFront to access S3 securely.
+
+---
+
+#### **6. Access the Deployed Site**
+
+* Copy the CloudFront URL.
+* Example:
+
+  ```
+  https://dxxxxx.cloudfront.net
+  ```
+* Your static frontend is now live.
+
+---
+
+### **Custom Domain Setup (Optional but Recommended)**
+
+By default, the CloudFront URL looks like an AWS URL. To use your own domain:
+
+#### **7. Add Custom Domain to CloudFront**
+
+* Edit the CloudFront distribution.
+* Go to **Settings**.
+* Add your custom domain name (CNAME / Alternate domain name).
+
+---
+
+#### **8. Request HTTPS Certificate (ACM)**
+
+* Go to **AWS Certificate Manager (ACM)**.
+* Request a new certificate.
+* Enter your custom domain.
+* Validate ownership (DNS recommended).
+* Select this certificate in CloudFront under **Custom SSL certificate**.
+
+✅ HTTPS (port 443) will be enabled automatically.
+
+---
+
+### **Final Result**
+
+* Frontend served securely via **CloudFront + HTTPS**.
+* Static files hosted in **S3**.
+* API calls routed to backend on **EC2**.
+* No servers needed for frontend.
+
+---
+
+### **Key One-liner to Remember**
+
+> S3 + CloudFront serve static frontend files, EC2 runs backend servers.
