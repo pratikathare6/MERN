@@ -1,0 +1,19 @@
+Docker lets you ship your app with its environment, so it runs the same everywhere.
+
+docker run mongo -> get the mongodb image from docker hub and run 
+
+docker run -p 27015:27017 mongo  -> rout the request to the container 
+(whichever request come to 27015 forward it to docker container wich is running on 27107)
+
+if you wnat to run it in background use 
+
+docker run -d -p 27015:27017 mongo
+
+inspect the container  use 
+
+docker ps 
+
+to kill the process 
+
+docker ps 
+docker kill <container_id>
