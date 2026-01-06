@@ -3,11 +3,12 @@
   "name": "medium-app",
   "main": "src/index.ts",
   "compatibility_date": "2025-12-19",
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "vars": {
     "DATABASE_URL":"prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3RfaWQiOjEsInNlY3VyZV9rZXkiOiJza19nNm9SMUdWLWhoMlpZNGRSeXF5cE8iLCJhcGlfa2V5IjoiMDFLRTZGVDQ4VEVCUThOS1E3WU5UWEszM0oiLCJ0ZW5hbnRfaWQiOiI3NzI3YmU3ODg2OGM2ZWRkZjk0YTRiMTM5OTVjMDNmZDc2ODc5MDZlNWYwNTQ5YjRkMjg4MzU5ZjdlNDAzNTRmIiwiaW50ZXJuYWxfc2VjcmV0IjoiMzNlMjYwY2ItOGY5Ny00OGQxLWIwMzUtNDFkYjQyZjM4MWUwIn0.LAiJQun_-9o9eEAOXIYDCUUDJESGTc-drbRIy9HUrEA"
+    ,"JWT_SECREAT": "aSksaS"
   }
     // "kv_namespaces": [
   //   {

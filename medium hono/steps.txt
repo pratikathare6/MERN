@@ -250,3 +250,11 @@ npx prisma init
 npx prisma migrate dev --name init
 ```
 
+-generate the prisma client 
+npx prisma generate
+
+add the accelerate extention
+
+npm install @prisma/extension-accelerate
+
+
