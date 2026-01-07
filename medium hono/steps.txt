@@ -258,3 +258,10 @@ add the accelerate extention
 npm install @prisma/extension-accelerate
 
 
+npx wrangler login 
+
+npm run deploy 
+
+good to go hit the endpoins
+
+for zod validation use common folder and publish the zod common package to the npm 
