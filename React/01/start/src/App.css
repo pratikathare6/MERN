@@ -1,0 +1,19 @@
+body{
+
+    background-color: lightgray;
+    
+}
+
+.app{
+
+        /* display: flex;
+        flex-wrap: wrap;
+        gap: 40px; */
+
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        /* gap: 5px; */
+        
+}
+

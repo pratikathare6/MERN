@@ -1,0 +1,148 @@
+ 
+
+.card {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  max-width: 20vw;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.IconContainer{
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.topbar img {
+  border-radius: 50%;
+  height: 50px;
+  width: auto;
+}
+
+.topbar button {
+  background-color: black;
+  /* color: white;
+  border-radius: 6px;
+  width: 70px;
+  height: 30px;
+  margin-top: 15px; */
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  /* display: inline-block; */
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1px;
+  list-style: none;
+  margin: 0;
+  padding: 5px 7px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.buttons button {
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  margin: 10px 20px;
+  padding: 10px 10px;
+
+  
+ 
+  background-color: rgba(240, 240, 240, 0.26);
+  border: 1px solid #DFDFDF;
+  
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+ 
+  font-family: Inter, sans-serif;
+ 
+  
+ 
+ 
+  /* padding: 14px 22px; */
+  text-decoration: none;
+  transition: all .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+ 
+}
+
+ 
+
+
+
+.bottombar button {
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: medium;
+}
+.subtitle{
+
+    font-size: large;
+    font-weight: bold;
+}
+
+.rate {
+  font-size: larger;
+  font: bold;
+}
+
+.location {
+  font-size: smaller;
+  color: gray;
+}
+
+.bottombarleft {
+  display: flex;
+  flex-direction: column;
+}
+.bottombar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  border: 1px solid rgb(232, 231, 231);
+  margin-bottom: 20px;
+}
+
+.titles{
+
+    display: flex;
+    
+}
+.titles .title2{
+
+      margin-top: 10px;
+      margin-left: 10px;
+      font-size: small;
+      color: lightgray;
+}
