@@ -1,0 +1,15 @@
+Hooks 
+
+    useState - states ko manage krne ke liye 
+
+    useContext - global state ko manage krne ke liye without prop drilling 
+
+    useReducer - complex state management ke liye (REDUX jaisa chota version)
+
+    useEffect - side effects handle krne ke liye jaise API call,DOM manipulation,event listner
+
+    useRef - mutable values hold krne ke liye jo re-render trigger na kre ye to access dom 
+
+    useMemo & useCallback- optimixation ke liye or to avoid unnecessary re renders 
+    
+
