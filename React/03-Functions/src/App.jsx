@@ -28,16 +28,16 @@ function App() {
   return (
     <div>
       <div className="flex gap-2">
-        <button className="bg-red-200 border-1   p-3" onClick={btnclk}>
+        <button className="bg-red-200 border   p-3" onClick={btnclk}>
           clickme
         </button>
-        <button className="bg-yellow-200 border-1 p-3" onClick={btnclk2}>
+        <button className="bg-yellow-200 border p-3" onClick={btnclk2}>
           confirm
         </button>
       </div>
 
       <input
-        className="border-1 mt-10"
+        className="border mt-10"
         onChange={(val) => {
           enterdata(val);
         }}
