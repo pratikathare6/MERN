@@ -11,7 +11,9 @@ const Navbar = () => {
         <div className='flex items-center gap-8 px-2'>
          <Link to={'/'}>Home</Link>
          <Link to={'/Products'}>Products</Link>
+         <Link to={'/Courses'} >Courses</Link>
          <Link to={'/About'}>About</Link>
+         
  
           
         </div>
