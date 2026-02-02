@@ -93,6 +93,32 @@ for(let k=1;k<=100;k++){
 
         if(k%3==0 && k%5 == 0){
 
-            console.log(k)
+            // console.log(k)
         }
 }
+
+
+let fnc = (v1)=>{
+
+        // console.log(`${v1} is dancing`);
+}
+
+fnc("js");
+
+
+let fnc2=(...val)=>{
+
+    // console.log(val);
+}
+
+fnc2(1,2,3,4,5);
+
+
+//return 
+let fnc3 = (a)=>{
+
+    return 12+a;
+}
+
+let ans = fnc3(12);
+console.log(ans);
