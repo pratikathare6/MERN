@@ -63,7 +63,7 @@ newelem.setAttribute('placeholder','sample image..')
 
 let divi = document.querySelector('#diiv')
 
-divi.prepend(newelem)
+// divi.prepend(newelem)
 
 //Q8 add the css class to every even li
 
@@ -91,3 +91,33 @@ let addclass = document.querySelectorAll("ul li:nth-child(2n)")
         elem.style.fontSize ='38px';
     })
  
+
+    divi.addEventListener('mouseover',function(){
+
+         divi.style.backgroundColor = 'green'
+    })
+     divi.addEventListener('mouseout',function(){
+
+         divi.style.backgroundColor = 'red'
+    })
+
+   let md  = document.querySelector('.mousediv')
+    window.addEventListener('dblclick',function(elem){
+
+      md.style.top = elem.clientY + "px";
+      console.log(elem.clientX)
+      md.style.left = elem.clientX + "px";
+
+
+    })
+
+// Event bubbling 
+
+    let eb = document.querySelector('#pgdiv')
+    console.log(eb)
+
+    eb.addEventListener('click',function(elem){
+
+      elem.target.classList.toggle("pgidiv")
+
+    })
