@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="light-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Toggle</title>
+  <style>
+    /* Default (Light Theme) */
+    .light-theme {
+      --bg-color: #ffffff;
+      --text-color: #1a202c;
+      --card-bg: #f7fafc;
+      --border-color: #e2e8f0;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Dark Theme */
+    .dark-theme {
+      --bg-color: #1a202c;
+      --text-color: #e2e8f0;
+      --card-bg: #2d3748;
+      --border-color: #4a5568;
+      --shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .theme-btn {
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 50px;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text-color);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .theme-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .content {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+
+    p {
+      color: var(--text-color);
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Theme Demo</h1>
+      <button class="theme-btn" id="themeToggle">
+        🌙 Dark Mode
+      </button>
+    </header>
+    
+    <div class="content">
+      <h2>Perfect Theme Toggle</h2>
+      <p>
+        Toggle between light and dark themes using CSS custom properties. 
+        Just add/remove <code>.light-theme</code> or <code>.dark-theme</code> 
+        class on <code>&lt;html&gt;</code> or <code>&lt;body&gt;</code>.
+      </p>
+      <p>All styling adapts automatically!</p>
+    </div>
+  </div>
+
+    <script src="./theme.js"></script>
+</body>
+</html>
