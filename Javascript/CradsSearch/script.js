@@ -98,5 +98,11 @@ inp.addEventListener("input", function () {
     return user.name.toLocaleLowerCase().startsWith(inp.value.toLowerCase());
   });
 
+  if(filtered == ''){
+
+    document.querySelector('#h6').textContent = 'Not found'
+    
+  }
+ 
   getdata(filtered);
 });
