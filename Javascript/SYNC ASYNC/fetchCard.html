@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dynamic Card</title>
+    <style>
+      .card {
+        width: 260px;
+        padding: 16px;
+        border-radius: 12px;
+        background: #2b2b2b;
+        color: #fff;
+        font-family: system-ui, sans-serif;
+      }
+      .card img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #555;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+      }
+      .card p {
+        margin: 0 0 12px;
+        font-size: 14px;
+        color: #ccc;
+      }
+      .card button {
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: none;
+        background: #00b894;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      #main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        flex-direction: column;
+        gap: 4rem;
+      }
+      #card-container {
+        display: flex;
+        gap: 4rem;
+      }
+
+      #reload-button button {
+        padding: 16px 14px;
+        border-radius: 9px;
+        border: none;
+        background: #00b894;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="card-container"></div>
+      <div id="reload-button"><button id="btn">Reload</button></div>
+    </div>
+
+    <script src="./fetchCard.js"></script>
+  </body>
+</html>
