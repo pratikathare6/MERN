@@ -1,11 +1,14 @@
 function getdata() {
     
-  const container = document.getElementById("card-container");
-  container.innerHTML = "";
+  
 
   fetch("https://randomuser.me/api/?results=3")
     .then((rawdata) => rawdata.json())
     .then((data) => {
+
+      const container = document.getElementById("card-container");
+      container.innerHTML = "";
+
       data.results.forEach(function (user) {
         const card = document.createElement("div");
         const img = document.createElement("img");
