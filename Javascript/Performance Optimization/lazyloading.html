@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 20px;
+  }
+
+ 
+  h6{
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  
+  img{
+    width: 100%;
+    height: auto;
+    display: block;           
+    border-radius: 12px;
+    margin-bottom: 20px;    
+    opacity: 1;
+    object-fit: cover;       
+  }
+
+  /* Spacer div (you already added it) */
+  .spacer{
+    height: 250px;
+  }
+
+   
+  .imgopacity{
+    /* opacity: 1; */
+    transition: opacity 400ms ease;
+  }
+
+  .fade{
+    opacity: 1;  
+  }
+</style>
+
+<body>
+    
+        <div>
+
+            <div>
+                <h6>This is the implementation of the Lazy Loading using the Intersection Observer</h6>
+            </div>
+
+            <div>
+                <img data-src="https://images.unsplash.com/photo-1761839257475-4ca368dae6c3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                    <div class="spacer"></div>
+                <img data-src="https://images.unsplash.com/photo-1771076385129-cafc10012bac?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzMXx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <div class="spacer"></div>
+
+                <img data-src="https://images.unsplash.com/photo-1761839257845-9283b7d1b933?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8" alt="">
+                    <div class="spacer"></div>
+
+                <img data-src="https://images.unsplash.com/photo-1761839257661-c2392c65ea72?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <div class="spacer"></div>
+
+                <img data-src="https://plus.unsplash.com/premium_photo-1708834155836-4eec278332b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <div class="spacer"></div>
+
+                <img data-src="https://images.unsplash.com/photo-1761839258239-2be2146f1605?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+
+
+        </div>
+
+
+
+
+
+    <script src="./lazyloading.js"></script>
+</body>
+</html>
