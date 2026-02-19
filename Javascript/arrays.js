@@ -1,9 +1,9 @@
-//map always returns a new array with performed action and returns exact total count of elements
+//map always returns a new array with performed action and returns exact total count of elements.
 function map() {
   const arr = [1, 2, 3, 4];
 
   let c = arr.map(function (elem) {
-    return elem * 20; //here we performed the action and returned the value
+    return elem * 20; //here we performed the action and returned the value.
   });
 
   console.log("this is mapped array", c);
@@ -11,7 +11,7 @@ function map() {
 
 // map()
 
-//for each loops the each elemnt form array but does not returns a new array
+//for each loops the each elemnt form array but does not returns a new array.
 
 function foreach() {
   const arr = [1, 2, 3, 4];
@@ -37,7 +37,7 @@ function filter() {
   console.log("this is the filtered array ", newarr);
 }
 
-// filter()
+// filter().
 
 //reduce to reduce the array value into a single value ex: arr[1,2,3,4] reduce => newarr[10](sum of all elements)
 
