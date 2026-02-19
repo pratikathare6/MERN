@@ -1,56 +1,111 @@
-//Q1 create an array with 3 fruits and print the second fruit 
+//map always returns a new array with performed action and returns exact total count of elements
+function map() {
+  const arr = [1, 2, 3, 4];
 
-let arr = ['apple','banana','lemon']
+  let c = arr.map(function (elem) {
+    return elem * 20; //here we performed the action and returned the value
+  });
+
+  console.log("this is mapped array", c);
+}
+
+// map()
+
+//for each loops the each elemnt form array but does not returns a new array
+
+function foreach() {
+  const arr = [1, 2, 3, 4];
+
+  arr.forEach(function (elem) {
+    let d = elem * elem;
+    console.log("this is for each array ", d);
+  });
+}
+// foreach()
+
+//filter returns a new array based on the true false condition does not assure will return the total exact no of lelements
+
+function filter() {
+  const arr = [1, 2, 3, 4, 5, 6, 7];
+
+  let newarr = arr.filter(function (elem) {
+    if (elem % 2 === 0) {
+      return true;
+    }
+  });
+
+  console.log("this is the filtered array ", newarr);
+}
+
+// filter()
+
+//reduce to reduce the array value into a single value ex: arr[1,2,3,4] reduce => newarr[10](sum of all elements)
+
+function reduce() {
+  const arr = [1, 2, 3, 4, 5];
+
+  let newarr = arr.reduce(function (acc, val) {
+    return acc + val;
+  });
+
+  console.log("this is the reduced array", newarr);
+}
+
+reduce();
+
+//Q1 create an array with 3 fruits and print the second fruit
+
+let arr = ["apple", "banana", "lemon"];
 
 // console.log(arr[1]);
 
-//Q2 Add mango at the end Pineapple at the beginning of this array 
+//Q2 Add mango at the end Pineapple at the beginning of this array
 
-let fruits = ['apple','banana']
+let fruits = ["apple", "banana"];
 
-fruits.push('mango')// add at the start
-fruits.unshift('Pineapple') // add at the end 
+fruits.push("mango"); // add at the start
+fruits.unshift("Pineapple"); // add at the end
 // console.log(fruits)
 
 //Q3 Replace banana with kivi in the array
 
-let fruitss = ['apple','banana']
+let fruitss = ["apple", "banana"];
 
 fruitss.pop();
-fruitss.push('kivi')
+fruitss.push("kivi");
 // console.log(fruitss)
 
-//Q4 whats the difference betwen push and unshift 
+//Q4 whats the difference betwen push and unshift
 
 //push will insert an element in array at the last
 //unshift removes an element in array at the start
 
-//Q5 Remove the last element from an array using a method 
+//Q5 Remove the last element from an array using a method
 
-let numbers = [1,2,3,4,5]
+let numbers = [1, 2, 3, 4, 5];
 
-numbers.pop()
+numbers.pop();
 // console.log(numbers)
 
-//Q6 insert red and blue at the index 1 in this array 
+//Q6 insert red and blue at the index 1 in this array
 
-let colors = ['green','balck'];
-colors.splice(1,0,'red','blue')
-//splice removes the element but if we pass the 3rd parameter it will add in it 
+let colors = ["green", "balck"];
+colors.splice(1, 0, "red", "blue");
+//splice removes the element but if we pass the 3rd parameter it will add in it
 
 // console.log(colors)
 
-//Q7 extract the middle 3 elements from array 
+//Q7 extract the middle 3 elements from array
 
-let items = [1,2,3,4,5,6]
+let items = [1, 2, 3, 4, 5, 6];
 
-let arr2 = items.slice(2,4)//removes the lement and returns new array 
+let arr2 = items.slice(2, 4); //removes the lement and returns new array
 
 // console.log(arr2)
 
-//Q8 sort the array and do reverse 
+//Q8 sort the array and do reverse
 
-let sarr = ['zara','arjun','meera','bhvya']
+let sarr = ["zara", "arjun", "meera", "bhvya"];
 
 sarr.sort(); //default sort alfabetically
 // console.log(sarr)
@@ -60,100 +115,92 @@ sarr.reverse(); // reverse the array
 
 //we can also do sarr.sort().reverse() both changes the original array
 
-//Q9 use .map to square each number 
+//Q9 use .map to square each number
 
-let sq = [1,2,3,4]
+let sq = [1, 2, 3, 4];
 
- let newsq = sq.map(function(elem){
-
-        return elem*elem
-
- })
+let newsq = sq.map(function (elem) {
+  return elem * elem;
+});
 //  console.log('Original array - ',sq)
 //  console.log('squared array - ',newsq)
 
-//Q10 use .filter to keep numbers greater than 10 
+//Q10 use .filter to keep numbers greater than 10
 
-let arr3 = [1,2,20,30,50];
+let arr3 = [1, 2, 20, 30, 50];
 
- let newarr3 = arr3.filter(function(elem){
-
-       if(elem>10)  return elem
- })
+let newarr3 = arr3.filter(function (elem) {
+  if (elem > 10) return elem;
+});
 //  console.log(newarr3)
 
+//Q11 use reduce to find sum of this array
 
-//Q11 use reduce to find sum of this array 
+let red = [10, 20, 30];
 
-let red = [10,20,30]
-
-let newred = red.reduce(function(accum,elem){
-
-        return accum+elem
-},0)
+let newred = red.reduce(function (accum, elem) {
+  return accum + elem;
+}, 0);
 
 // console.log(newred)
 
-//Q12 use find to get the first number less tan 10 
+//Q12 use find to get the first number less tan 10
 
-let arr5 = [12,15,67,33,1,2,3]
+let arr5 = [12, 15, 67, 33, 1, 2, 3];
 
-let newarr5 = arr5.find(function(elem){ //returns the fist found element 
+let newarr5 = arr5.find(function (elem) {
+  //returns the fist found element
 
-          return elem < 10
-})
+  return elem < 10;
+});
 
 // console.log(newarr5)
 
-//Q13 use .some to find any student has scored below 35 
+//Q13 use .some to find any student has scored below 35
 
-let arr6 = [23,36,44,55]
+let arr6 = [23, 36, 44, 55];
 
-let newarr6 = arr6.some(function(elem){
-
-        return elem < 35
-})
+let newarr6 = arr6.some(function (elem) {
+  return elem < 35;
+});
 // console.log(newarr6)
 
-//Q14 use .every to check if all the numbers are even 
+//Q14 use .every to check if all the numbers are even
 
 //all the elemnts must be even then it will return true
-let newarr7  = arr6.every(function(elem){
-
-            return elem%2 ===0
-})
+let newarr7 = arr6.every(function (elem) {
+  return elem % 2 === 0;
+});
 
 // console.log(newarr7)
 
-//Q15 destructure this array to get firstname and lastname 
+//Q15 destructure this array to get firstname and lastname
 
-let fullname = ['adam','smith']
+let fullname = ["adam", "smith"];
 
-let [firstname,lastname] = fullname;
+let [firstname, lastname] = fullname;
 // console.log([firstname,lastname])
 
-// Q16 merge 2 arrays using spread operator 
+// Q16 merge 2 arrays using spread operator
 
-    let m1 = [1,2,3]
-    let m2 = [4,5,6]
+let m1 = [1, 2, 3];
+let m2 = [4, 5, 6];
 
-    let newm = [...m1,...m2]
+let newm = [...m1, ...m2];
 
-    // console.log(newm)
+// console.log(newm)
 
-// Q17 add india at the start of this array using spread 
+// Q17 add india at the start of this array using spread
 
-    let countries = ['japan','US']
+let countries = ["japan", "US"];
 
-    countries = ['india',...countries]
+countries = ["india", ...countries];
 
-    // console.log(countries)
+// console.log(countries)
 
+//Q18 clone this array properly not by reference
 
-//Q18 clone this array properly not by reference 
+let arr7 = [1, 2, 3];
 
-let arr7 = [1,2,3]
-
-let newarr8 = [...arr7] 
-console.log(newarr8)
- 
+let newarr8 = [...arr7];
+console.log(newarr8);
