@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="bg-zinc-900 w-full min-h-screen p-10 text-white flex justify-center items-center flex-col"
+    >
+      <form action="/register" method="post" class="flex flex-col gap-3 w-1/4">
+        <input
+          type="text"
+          class="px-4 py-3 rounded-md bg-transparent border border-zinc-600"
+          placeholder="Username"
+          name="username"
+        />
+        <input
+          type="text"
+          class="px-4 py-3 rounded-md bg-transparent border border-zinc-600"
+          placeholder="Name"
+          name="name"
+        />
+        <input
+          type="number"
+          class="px-4 py-3 rounded-md bg-transparent border border-zinc-600"
+          placeholder="Age"
+          name="age"
+        />
+        <input
+          type="email"
+          required
+          class="px-4 py-3 rounded-md bg-transparent border border-zinc-600"
+          placeholder="Email"
+          name="email"
+        />
+        <input
+          type="password"
+          required
+          class="px-4 py-3 rounded-md bg-transparent border border-zinc-600"
+          placeholder="Password"
+          name="password"
+        />
+        <input
+          type="submit"
+          class="border px-4 py-3 rounded-md bg-blue-500 active:scale-95"
+          value="Create Account"
+        />
+      </form>
+
+      <span class="font-bold text-md">or</span>
+      <a href="/login" class="text-blue-500 text-xl font-bold underline"
+        >Login</a
+      >
+    </div>
+  </body>
+</html>
