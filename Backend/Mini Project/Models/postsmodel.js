@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// mongoose.connect('mongodb+srv://Pratik6:pratik751062@cluster0.1aizdpc.mongodb.net/SocialApp');
+// mongoose.connect('');
 //dont need to connect to DB already connected in the usermodel
 
 const postsSchema = mongoose.Schema({
