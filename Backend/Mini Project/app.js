@@ -5,7 +5,11 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const path = require("path");
 
+const upload = require("./config/multerconfig");
+
+app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,50 +27,40 @@ app.get("/profile", isloggedin, async (req, res) => {
   //log the userdata after jwt verifies req.user
   console.log(req.user);
 
-  let user = await usermodel.findOne({email:req.user.email}).populate("posts")//like join
-   
-  res.render("profile",{user});
+  let user = await usermodel
+    .findOne({ email: req.user.email })
+    .populate("posts"); //like join
+
+  res.render("profile", { user });
 });
 
 app.get("/like:id", isloggedin, async (req, res) => {
+  let post = await postsmodel.findOne({ _id: req.params.id }).populate("user");
 
-  let post = await postsmodel.findOne({_id:req.params.id}).populate("user")
-    
-  if(post.likes.indexOf(req.user.userid)=== -1){
-
-      post.likes.push(req.user.userid)
-  }
-  else{
-    post.likes.splice(post.likes.indexOf(req.user.userid),1);
-
+  if (post.likes.indexOf(req.user.userid) === -1) {
+    post.likes.push(req.user.userid);
+  } else {
+    post.likes.splice(post.likes.indexOf(req.user.userid), 1);
   }
   await post.save();
   res.redirect("/profile");
 });
 
-
-
 app.post("/post", isloggedin, async (req, res) => {
-  let user = await usermodel.findOne({email:req.user.email})
+  let user = await usermodel.findOne({ email: req.user.email });
 
-    let {content} = req.body
-       let post = await postsmodel.create({
+  let { content } = req.body;
+  let post = await postsmodel.create({
+    user: user._id,
+    content,
+  });
 
-            user:user._id,
-            content
+  console.log(post);
 
-        })
-
-        console.log(post)
-
-        user.posts.push(post._id)
-        await user.save();
-        res.redirect('/profile')
-
+  user.posts.push(post._id);
+  await user.save();
+  res.redirect("/profile");
 });
-
-
-
 
 app.post("/register", async (req, res) => {
   let { username, name, age, email, password } = req.body;
@@ -130,33 +124,41 @@ function isloggedin(req, res, next) {
   next();
 }
 
+app.get("/edit/:id", isloggedin, async (req, res) => {
+  let post = await postsmodel.findOne({ _id: req.params.id });
+  res.render("edit", { post });
+});
 
+app.post("/edit/:id", isloggedin, async (req, res) => {
+  let post = await postsmodel.findOneAndUpdate(
+    { _id: req.params.id },
+    { content: req.body.content },
+  );
+  res.redirect("/profile");
+});
 
-app.get('/edit/:id',isloggedin, async (req,res)=>{
+app.get("/delete/:id", isloggedin, async (req, res) => {
+  let deleted = await postsmodel.findOneAndDelete({ _id: req.params.id });
+  console.log(deleted);
+  res.redirect("/profile");
+});
 
-    
-    let post = await postsmodel.findOne({_id:req.params.id})
-    res.render('edit',{post})
-     
-})
+app.get("/profile/upload", isloggedin, async (req, res) => {
+  let user = await usermodel.findOne({ email: req.user.email });
+  res.render("profileupload", { user });
+});
 
-app.post('/edit/:id',isloggedin, async (req,res)=>{
+app.post(
+  "/upload",
+  upload.single("uploadprofile"),
+  isloggedin,
+  async (req, res) => {
+    let user = await usermodel.findOne({ email: req.user.email });
+    user.profilepic = req.file.filename;
+    await user.save();
 
-    
-    let post = await postsmodel.findOneAndUpdate({_id:req.params.id}, {content: req.body.content})
-    res.redirect('/profile')
-     
-})
-
-app.get('/delete/:id',isloggedin, async (req,res)=>{
-
-    let deleted = await postsmodel.findOneAndDelete({_id:req.params.id})
-    console.log(deleted)
-    res.redirect('/profile')
-     
-})
- 
-
-
+    res.redirect("/profile");
+  },
+);
 
 app.listen(3000);

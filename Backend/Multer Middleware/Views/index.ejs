@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload File</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="bg-zinc-900 w-full min-h-screen p-10 text-white flex justify-center items-center flex-col"
+    >
+      <form action="/upload" method="post" class="flex flex-col gap-3 w-1/4" enctype="multipart/form-data">
+                                                                            <!-- this is required for multer -->
+         <input                                                              
+          type="file"
+          class="px-4 py-3 rounded-md bg-transparent border border-zinc-600"
+          name="image"
+        />
+       
+        <input
+          type="submit"
+          class="border px-4 py-3 rounded-md bg-blue-500 active:scale-95"
+          value="Upload File"
+        />
+      </form>
+    </div>
+  </body>
+</html>

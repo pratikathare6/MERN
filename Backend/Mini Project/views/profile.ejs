@@ -14,7 +14,11 @@
                 <a href="/logout" class="bg-red-500 px-3 py-2 rounded text-sm ">Logout</a>
             </div>
 
-            <h1 class="text-3xl"><span class="font-light">Hello,</span> <%= user.name %> 👋</h1>
+            <div class="flex items-start mb-5 items-center gap-4 ">
+              <div class="w-10 h-10 rounded-md"><a href="/profile/upload"><img class="w-full h-full object-cover"  src= "/images/uploads/<%= user.profilepic %>" alt=""></a></div>
+              
+              <h1 class="text-3xl"><span class="font-light">Hello,</span> <%= user.name %> 👋</h1>
+            </div>
             <h5>You can create a new post</h5>
     
 
