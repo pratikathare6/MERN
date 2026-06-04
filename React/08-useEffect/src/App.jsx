@@ -1,7 +1,7 @@
  
 import { useEffect,useState } from 'react'
 import './App.css'
-
+import UseRef from './UseRef'
 function App() {
 
   const [a, setA] = useState(0)
@@ -52,6 +52,7 @@ function App() {
        
       </div>
        
+       <UseRef/>
     </>
   )
 }
