@@ -2,6 +2,8 @@
 import { useEffect,useState } from 'react'
 import './App.css'
 import UseRef from './UseRef'
+import UseMemo from './UseMemo'
+import UseCallback from './UseCallback'
 function App() {
 
   const [a, setA] = useState(0)
@@ -53,6 +55,8 @@ function App() {
       </div>
        
        <UseRef/>
+       <UseMemo/>
+       <UseCallback/>
     </>
   )
 }
